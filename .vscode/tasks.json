@@ -6,7 +6,12 @@
         {
             "label": "Build docker container",
             "type": "shell",
-            "command": "docker build . -t 7-days-to-die"
+            "command": "docker build . -t 7-days-to-die",
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
         }
     ]
 }
