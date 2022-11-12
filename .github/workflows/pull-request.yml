@@ -40,11 +40,11 @@ jobs:
           platforms: linux/amd64
           push: true
           tags: |
-            ghcr.io/${{ steps.string.outputs.lowercase }}:pr-${{ steps.vars.outputs.sha_short }}
+            ghcr.io/${{ steps.string.outputs.lowercase }}-pr:${{ steps.vars.outputs.sha_short }}
           pull: true
 
       - name: Comment on PR
         uses: allthatjazzleo/actions-pull-request-add-comment@master
         with:
-          message: 'Container available at ghcr.io/${{ steps.string.outputs.lowercase }}:pr-${{ steps.vars.outputs.sha_short }}'
+          message: 'Container available at ghcr.io/${{ steps.string.outputs.lowercase }}-pr:${{ steps.vars.outputs.sha_short }}'
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
